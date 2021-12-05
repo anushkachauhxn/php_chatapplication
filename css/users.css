@@ -1,0 +1,116 @@
+@import "styles.css";
+.wrapper img {
+  object-fit: cover;
+  border-radius: 50%;
+}
+.users {
+  padding: 25px 30px;
+}
+.users header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.users header .content {
+  display: flex;
+  align-items: center;
+}
+.users header .content img {
+  height: 50px;
+  width: 50px;
+}
+.users header .content .details {
+  margin-left: 15px;
+}
+.users header .content .details span {
+  font-size: 18px;
+  font-weight: 500;
+}
+.users header .logout {
+  background: #333;
+  color: #fff;
+  font-size: 17px;
+  padding: 7px 15px;
+  border-radius: 5px;
+}
+.users .search {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.users .search .text {
+  font-size: 18px;
+}
+.users .search input {
+  position: absolute;
+  height: 42px;
+  width: calc(100% - 50px);
+  padding: 0 13px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+.users .search button {
+  width: 47px;
+  height: 42px;
+  border: none;
+  outline: none;
+  background: #fff;
+  color: #333;
+  font-size: 17px;
+  border-radius: 0 5px 5px 0;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.users .users-list {
+  max-height: 350px;
+  overflow-y: auto;
+}
+.users .users-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+  padding-right: 15px;
+  padding-bottom: 20px;
+  margin-bottom: 15px;
+  page-break-after: 10px;
+}
+.users .users-list a .content {
+  display: flex;
+  align-items: center;
+}
+.users .users-list a .content img {
+  height: 40px;
+  width: 40px;
+}
+.users .users-list a .content .details {
+  margin-left: 15px;
+  color: #000;
+}
+.users .users-list a .content .details span {
+  font-size: 18px;
+  font-weight: 500;
+}
+.users .users-list a .content .details p {
+  color: #67676a;
+}
+.users .users-list a .status-dot {
+  font-size: 12px;
+  color: #468669;
+}
+.users .users-list a .status-dot.offline {
+  color: #ccc;
+}
+.users .users-list a:last-child {
+  border: none;
+  margin-bottom: 0;
+}
+.users-list::-webkit-scrollbar {
+  width: 0px;
+}
