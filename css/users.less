@@ -4,3 +4,39 @@
   object-fit: cover;
   border-radius: 50%;
 }
+
+.users {
+  padding: 25px 30px;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e6e6e6;
+
+    .content {
+      display: flex;
+      align-items: center;
+      img {
+        height: 50px;
+        width: 50px;
+      }
+      .details {
+        margin-left: 15px;
+        span {
+          font-size: 18px;
+          font-weight: 500;
+        }
+      }
+    } //.content
+
+    .logout {
+      background: #333;
+      color: #fff;
+      font-size: 17px;
+      padding: 7px 15px;
+      border-radius: 5px;
+    } //.logout
+  } //header
+}
