@@ -14,25 +14,66 @@
     margin: 20px 0;
 
     .error-txt {
-        color: #721c24;
-        background: #f8d7da;
-        padding: 8px 10px;
-        text-align: center;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        border: 1px solid #f5c6cb;
-        display: none;
-      } //.error-text
+      color: #721c24;
+      background: #f8d7da;
+      padding: 8px 10px;
+      text-align: center;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #f5c6cb;
+      display: none;
+    } //.error-text
 
-      .name-details {
-        display: flex;
-  
-        .field:first-child {
-          margin-right: 10px;
-        }
-        .field:last-child {
-          margin-left: 10px;
-        }
-      } //.name-details
+    .name-details {
+      display: flex;
+
+      .field:first-child {
+        margin-right: 10px;
+      }
+      .field:last-child {
+        margin-left: 10px;
+      }
+    } //.name-details
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      position: relative;
+
+      label {
+        margin-bottom: 2px;
+      }
+
+      input {
+        outline: none;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        height: 40px;
+        width: 100%;
+        font-size: 16px;
+        padding: 0 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      input[type="field"] {
+        font-size: 17px;
+      }
+
+      input[type="submit"] {
+        margin-top: 13px;
+        height: 45px;
+        border: none;
+        font-size: 17px;
+        font-weight: 400;
+        background: #333;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    } //.field
   } //form
 } //.form
