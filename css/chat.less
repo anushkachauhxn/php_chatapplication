@@ -80,4 +80,31 @@
       }
     } //.incoming
   } //.chat-box
+
+  .typing-area {
+    padding: 18px 30px;
+    display: flex;
+    justify-content: space-between;
+
+    input {
+      height: 45px;
+      width: calc(100% - 58px);
+      font-size: 17px;
+      border: 1px solid #ccc;
+      padding: 0 13px;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+    }
+
+    button {
+      width: 55px;
+      border: none;
+      outline: none;
+      background: #333;
+      color: #fff;
+      font-size: 19px;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+  } //.typing-area
 }
