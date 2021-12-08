@@ -36,7 +36,19 @@
                         
                         // #3.3 Check if image was moved to our folder successfully
                         if (move_uploaded_file($tmp_name, '../uploaded_images/'.$new_img_name)) {
+                            //After sign up
+                            $status = 'Active Now';                  //status becomes active
+                            $random_id = rand(time(), 10000000);     //random id for user
 
+                            // #4.1 Check if inserting all user data inside table was successful
+                            $sql2 = mysqli_query($conn, "INSERT INTO users (unique_id, fname, lname, email, password, img, status)
+                                                         VALUES ({$random_id}, '{$fname}', '{$lname}', '{$email}', '{$password}', '{$new_img_name}', '{$status}')");
+                            if ($sql2) {
+                                
+                            }
+                            else {
+                                echo "Something went wrong!";
+                            } // else #4.1
                         }
                         else {
                             echo "Something went wrong!";
