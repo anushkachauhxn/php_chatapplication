@@ -11,6 +11,14 @@
         // #2.1 Email validity
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
+            // #2.2 Check if email is already in database
+            $sql = mysqli_query($conn, "SELECT email FROM users WHERE email = '{$email}'");
+            if (mysqli_num_rows($sql) > 0) {
+                echo "$email - This email already exists";
+            }
+            else {
+
+            } // else #2.2
         }
         else {
             echo "$email - This is not a valid email";
