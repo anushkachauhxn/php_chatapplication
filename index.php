@@ -50,4 +50,5 @@
   </body>
 
   <script src="javascript/password-visibility.js"></script>
+  <script src="javascript/signup.js"></script>
 </html>
