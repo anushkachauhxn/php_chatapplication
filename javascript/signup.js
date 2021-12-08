@@ -17,5 +17,7 @@ continueBtn.onclick = () => {
             }
         }
     }
-    xhr.send();
+    // Sending form data theough ajax to php
+    let formData = new FormData(form)
+    xhr.send(formData)
 }
