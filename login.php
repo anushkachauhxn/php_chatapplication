@@ -13,7 +13,7 @@
       <section class="form signup">
         <header>Realtime Chat App</header>
         <form action="#">
-          <div class="error-txt">This is an error message!</div>
+          <div class="error-txt"></div>
           <div class="field">
             <label>Email Address</label>
             <input type="text" placeholder="Enter your email" />
@@ -29,7 +29,7 @@
         </form>
         <div class="link">
           Not signed up yet?
-          <a href="#">Sign up now</a>
+          <a href="index.php">Sign up now</a>
         </div>
       </section>
     </div>
