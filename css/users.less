@@ -60,6 +60,14 @@
       border: 1px solid #ccc;
       border-radius: 5px 0 0 5px;
       outline: none;
+
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.2s ease;
+    }
+    input.active {
+      opacity: 1;
+      pointer-events: auto;
     } //input
 
     button {
@@ -73,6 +81,14 @@
       border-radius: 0 5px 5px 0;
       transition: all 0.2s ease;
       cursor: pointer;
+    }
+    button.active {
+      background: #333;
+      color: #fff;
+
+      i::before {
+        content: "\f00d";
+      }
     } //button
   } //.search
 
