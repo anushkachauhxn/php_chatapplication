@@ -18,6 +18,13 @@
             }
             else {
 
+                // #3.1 Check if image has been uploaded
+                if (isset($_FILES['image'])) {                  //$_FILES[] returns an array with filename, filetype, error, filesize, tmp_name
+                    
+                }
+                else {
+                    echo "Please select an image file";
+                } // else #3.1
             } // else #2.2
         }
         else {
