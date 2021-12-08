@@ -31,7 +31,16 @@
                     $img_ext = end($img_explode);               //extension of the image file
 
                     if (in_array($img_ext, $extensions) === true) {
+                        $time = time(); //current time - we rename the image file using current time so they can all have unique names
+                        $new_img_name = $time.$img_name; //current time added before name of image uploaded
+                        
+                        // #3.3 Check if image was moved to our folder successfully
+                        if (move_uploaded_file($tmp_name, '../uploaded_images/'.$new_img_name)) {
 
+                        }
+                        else {
+                            echo "Something went wrong!";
+                        } // else #3.3
                     }
                     else {
                         echo "Please select an image file - jpeg, jpg, png";
