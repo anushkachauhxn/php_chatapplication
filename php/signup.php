@@ -20,7 +20,22 @@
 
                 // #3.1 Check if image has been uploaded
                 if (isset($_FILES['image'])) {                  //$_FILES[] returns an array with filename, filetype, error, filesize, tmp_name
+                    $img_name = $_FILES['image']['name'];       //getting user uploaded image name
+                    $img_type = $_FILES['image']['type'];       //getting user uploaded image type
+                    $tmp_name = $_FILES['image']['tmp_name'];   //this temporary name is used to save/move file in our folder
+
+                    // #3.2 Check if image uploaded has valid extension
+                    $extensions = ['png', 'jpeg', 'jpg'];       //our valid extensions
                     
+                    $img_explode = explode('.', $img_name);     //exploding image and getting the extension
+                    $img_ext = end($img_explode);               //extension of the image file
+
+                    if (in_array($img_ext, $extensions) === true) {
+
+                    }
+                    else {
+                        echo "Please select an image file - jpeg, jpg, png";
+                    } // else #3.2
                 }
                 else {
                     echo "Please select an image file";
