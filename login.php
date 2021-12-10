@@ -36,4 +36,5 @@
   </body>
 
   <script src="javascript/password-visibility.js"></script>
+  <script src="javascript/login.js"></script>
 </html>
