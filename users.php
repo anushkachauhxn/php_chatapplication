@@ -1,3 +1,11 @@
+<?php
+  session_start();
+  if (!isset($_SESSION['unique_id'])) {
+    // Redirect to Login Page
+    header("location: login.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,11 +20,20 @@
     <div class="wrapper">
       <section class="users">
         <header>
+          <?php
+            include_once "php/config.php";
+            // Select all data of current logged in user using session
+            $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
+            if (mysqli_num_rows($sql) > 0) {
+              $row = mysqli_fetch_assoc($sql);
+            }
+          ?>
+
           <div class="content">
-            <img src="img1.jpg" alt="" />
+            <img src="uploaded_images/<?php echo $row['img'] ?>" alt="" />
             <div class="details">
-              <span>Anushka Chauhan</span>
-              <p>Active now</p>
+              <span><?php echo $row['fname'] . " " . $row['lname'] ?></span>
+              <p><?php echo $row['status'] ?></p>
             </div>
           </div>
           <a href="#" class="logout">Logout</a>
