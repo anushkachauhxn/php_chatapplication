@@ -4,9 +4,10 @@ const searchBar = document.querySelector('.users .search input'),
 
 /* Search Bar Functioning */
 searchBtn.onclick = () => {
-    searchBar.classList.toggle('active')
-    searchBtn.classList.toggle('active')
-    searchBar.focus()
+    searchBar.classList.toggle('active');
+    searchBtn.classList.toggle('active');
+    searchBar.focus();
+    searchBar.value = ''; // cleans the previous search values
 }
 
 searchBar.onkeyup = () => {
@@ -35,7 +36,11 @@ setInterval(() => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 let data = xhr.response
-                usersList.innerHTML = data;
+
+                // If search bar is not active, we want all users listed
+                if (! searchBar.classList.contains('active')) {
+                    usersList.innerHTML = data;
+                }
             }
         }
     }
