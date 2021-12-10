@@ -97,5 +97,7 @@
         </form>
       </section>
     </div>
+
+    <script src="javascript/chat.js"></script>
   </body>
 </html>
