@@ -38,53 +38,7 @@
         </header>
             
         <div class="chat-box">
-          <div class="chat outgoing">
-            <div class="details">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </div>
-          <div class="chat incoming">
-            <img src="img1.jpg" alt="" />
-            <div class="details">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </div>
-
-          <div class="chat outgoing">
-            <div class="details">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </div>
-          <div class="chat incoming">
-            <img src="img1.jpg" alt="" />
-            <div class="details">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </div>
-
-          <div class="chat outgoing">
-            <div class="details">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </div>
-          <div class="chat incoming">
-            <img src="img1.jpg" alt="" />
-            <div class="details">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </div>
-
-          <div class="chat outgoing">
-            <div class="details">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </div>
-          <div class="chat incoming">
-            <img src="img1.jpg" alt="" />
-            <div class="details">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </div>
+          <!-- Dynamic Data -->
         </div>
 
         <form action="#" class="typing-area" autocomplete="off">
