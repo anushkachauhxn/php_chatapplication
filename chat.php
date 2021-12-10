@@ -1,3 +1,11 @@
+<?php
+  session_start();
+  if (!isset($_SESSION['unique_id'])) {
+    // Redirect to Login Page
+    header("location: login.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,13 +20,23 @@
     <div class="wrapper">
       <section class="chat-area">
         <header>
-          <a href="#" class="back-icon"><i class="fas fa-arrow-left"></i></a>
-          <img src="img1.jpg" alt="" />
+          <?php
+            include_once "php/config.php";
+            $user_id = mysqli_real_escape_string($conn, $_GET['user_id']);
+            // Select all data of current logged in user using session
+            $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$user_id}");
+            if (mysqli_num_rows($sql) > 0) {
+              $row = mysqli_fetch_assoc($sql);
+            }
+          ?>
+          <a href="users.php" class="back-icon"><i class="fas fa-arrow-left"></i></a>
+          <img src="uploaded_images/<?php echo $row['img'] ?>" alt="" />
           <div class="details">
-            <span>Anushka Chauhan</span>
-            <p>Active now</p>
+            <span><?php echo $row['fname'] . " " . $row['lname'] ?></span>
+            <p><?php echo $row['status'] ?></p>
           </div>
         </header>
+            
         <div class="chat-box">
           <div class="chat outgoing">
             <div class="details">
