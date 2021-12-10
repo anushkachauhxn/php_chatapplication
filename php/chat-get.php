@@ -13,6 +13,7 @@
     
     // Select all chat data matching with these ids
     $query = "SELECT * FROM messages 
+              LEFT JOIN users ON users.unique_id = messages.outgoing_msg_id
               WHERE (outgoing_msg_id = {$outgoing_id} AND incoming_msg_id = {$incoming_id}) 
               OR (outgoing_msg_id = {$incoming_id} AND incoming_msg_id = {$outgoing_id})
               ORDER BY msg_id DESC";
@@ -32,7 +33,7 @@
             else {
                 // #2 Current user is RECEIVER -> Incoming Msg
                 $output .= '<div class="chat incoming">
-                                <img src="" alt="" />
+                                <img src="uploaded_images/'. $row['img'] .'" alt="" />
                                 <div class="details">
                                     <p>'. $row['msg'] .'</p>
                                 </div>
