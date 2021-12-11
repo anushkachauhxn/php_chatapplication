@@ -23,6 +23,9 @@
             $msg = "No messages available";
         }
 
+        // Showing if user is online or offline
+        ($row['status'] == "Offline Now") ? $offline = "offline" : $offline = "";
+
         $output .= '<a href="chat.php?user_id='. $row['unique_id'] .'">
                         <div class="content">
                         <img src="uploaded_images/' . $row['img'] . '" alt="" />
@@ -31,7 +34,7 @@
                             <p>'. $you . $msg .'</p>
                         </div>
                         </div>
-                        <div class="status-dot"><i class="fas fa-circle"></i></div>
+                        <div class="status-dot '. $offline .'"><i class="fas fa-circle"></i></div>
                     </a>';
     }
 ?>
