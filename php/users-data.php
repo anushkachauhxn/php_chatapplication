@@ -11,9 +11,16 @@
         if (mysqli_num_rows($sql2) > 0) {
             $row2 = mysqli_fetch_assoc($sql2);
             $result = $row2['msg'];
+            
+            // If message is too long to be displayed fully
+            (strlen($result) > 28) ? $msg = substr($result, 0, 28).'...' : $msg = $result;
+            
+            // Adding who sent the message, current user or the row user
+            ($outgoing_id == $row2['outgoing_msg_id']) ? $you = "You: " : $you = "";
         }
         else {
-            $result = "No messages available";
+            $you = "";
+            $msg = "No messages available";
         }
 
         $output .= '<a href="chat.php?user_id='. $row['unique_id'] .'">
@@ -21,7 +28,7 @@
                         <img src="uploaded_images/' . $row['img'] . '" alt="" />
                         <div class="details">
                             <span>'. $row['fname'] . ' ' . $row['lname'] .'</span>
-                            <p>'. $result .'</p>
+                            <p>'. $you . $msg .'</p>
                         </div>
                         </div>
                         <div class="status-dot"><i class="fas fa-circle"></i></div>
