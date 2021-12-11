@@ -11,8 +11,14 @@
         $sql = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}' AND password = '{$password}'");
         if (mysqli_num_rows($sql) > 0) {
             $row = mysqli_fetch_assoc($sql);
-            $_SESSION['unique_id'] = $row['unique_id']; //using this session, we used user unique_id in other php file
-            echo "SUCCESS!";
+
+            // #3 Check if updating status after login was successful
+            $status = "Active Now";
+            $sql2 = mysqli_query($conn, "UPDATE users SET status = '{$status}' WHERE unique_id = {$row['unique_id']}");
+            if ($sql2) {
+                $_SESSION['unique_id'] = $row['unique_id']; //using this session, we used user unique_id in other php file
+                echo "SUCCESS!";
+            }
         }
         else {
             echo "Email or Password is incorrect!";
