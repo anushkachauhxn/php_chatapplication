@@ -1,3 +1,11 @@
+<?php
+  session_start();
+  if (isset($_SESSION['unique_id'])) {
+    // If user is already logged in, redirect to User Page 
+    header("location: users.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
